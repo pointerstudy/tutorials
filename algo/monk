@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,i,x,k=0,temp,countin=0;
+	
+	queue<int> ar;
+	queue<int> cop;
+	int arcop[100];
+	cin>>n;
+	
+	for(i=0;i<n;i++)
+	 {cin>>x;
+	  ar.push(x);
+	 }
+	for(i=0;i<n;i++)
+	 cin>>arcop[i];
+    
+	while(!ar.empty())
+	 { while(ar.front()!=arcop[k])
+	    {temp=ar.front();
+		 ar.pop();
+		 ar.push(temp);
+         countin++;
+		}
+       if(ar.front()==arcop[k])
+	     { ar.pop();
+		   k++;
+		   countin++;
+		 }
+ 
+	 } 
+	 cout<<countin;
+	 return 0;
+ 
+}
